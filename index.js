@@ -2,10 +2,13 @@ const express = require('express'),
 	homeController = require('./controllers/homeController'),
 	expressLayouts = require('express-ejs-layouts'),
 	morgan = require('morgan'),
-	mongooge = require('mongoose');
+	mongoose = require('mongoose');
 
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/capstone_1',
+ {useFindAndModify: false, useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
 
+mongoose.Promise = global.Promise;
 
 const app = express();
 
