@@ -76,6 +76,13 @@ body * + * {
 	padding: 1.5em;
 	background-color: var(--my-color);
 }
+/* customized for the project */
+.firstColumn {
+	flex: 1;
+}
 
+.secondColumn {
+	flex: 1;
+}
 
 

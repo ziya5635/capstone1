@@ -22,7 +22,7 @@ const userSchema = new Schema({
 		required: true
 	},
 
-}{timestamps:true});
+},{timestamps:true});
 
 userSchema.virtual('fullName')
 	.get(function(){

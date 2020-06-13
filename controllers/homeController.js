@@ -2,7 +2,7 @@
 
 module.exports = {
 	index: (req, res) => {
-		res.locals = {title: 'home page'};
+		res.locals.title = {title: 'Home page'};
 		res.render('home');
 	
 	}
