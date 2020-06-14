@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	new: (req, res, next) => {
-		res.locals.title = {title: 'New user'};
+		res.locals.title = 'New user';
 		res.render('users/new');
 		next();
 	},
