@@ -1,18 +1,23 @@
-<div class="container flex">
-	<div class="hidden"></div>
-	<form class="login-form tile center">
+<div class="container flex align">
+	<form class="login-form tile signup" action="/users/create" method="POST">
 		
 		<p><label for="firstName">First Name</label>
 			<input type="text" name="firstName" id="firstName"></p>
 
 		<p><label for="lastName">Last Name</label>
-		<input type="text" name="lastName" id="lastName"></p>
+			<input type="text" name="lastName" id="lastName"></p>
 
 		<p><label>Email</label>
-			<input type="Email" name="email">
+			<input type="Email" name="email"></p>
+
+		<p><label for="username">UserName</label>
+			<input type="text" name="userName" id="username"></p>
+
+		<p><label>Password</label>
+			<input type="Password" name="password"></p>
 
 		<button class="submit">Sign up</button>
 
 	</form>
-	<div class="hidden"></div>
+
 </div>

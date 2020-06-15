@@ -27,6 +27,34 @@ body * + * {
 
 /*               ////// DEFAULT REMCOMMENDED STYLES ///////    */
 
+.centered {
+	text-align: center;
+}
+
+.cost {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: .7; /*determines the hight of each flex-item in the flex container*/
+}
+
+.cost > span {
+	margin-top: 0;
+}
+
+.cost-currency {
+	font-size: 2rem;
+}
+
+.cost-dollars {
+	font-size: 4rem;
+}
+
+.cost-cents {
+	font-size: 1.5rem;
+	align-self: flex-start;
+}
+
 .column-main {
 	flex: 2;
 }
@@ -39,6 +67,14 @@ body * + * {
 
 .column-sidebar > .tile {
 	flex: 1;
+}
+
+.cta-button {
+	display: block;
+	background-color: #cc6b5a;
+	color: white;
+	padding: .5em 1em;
+	text-decoration: none;
 }
 
 .flex {
@@ -104,12 +140,15 @@ body * + * {
 	padding: 1.5em;
 	background-color: var(--my-color);
 }
+
 /* customized for the project */
 
-.center {
-	flex: 1;
+.align {
+	justify-content: center;
 }
-.hidden {
-	flex: 1;
+
+.signup{
+	flex-basis: 20em;
 }
+
 
