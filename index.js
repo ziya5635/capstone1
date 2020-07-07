@@ -39,12 +39,6 @@ app.use(expressSession({
 	saveUninitialized: false
 }));
 app.use(connectFlash());
-app.use((req, res, next) => {
-	res.locals.flashMessages = req.flash();
-	res.locals.loggedIn = req.isAuthenticated(); //method added by passport module
-	res.locals.currentUser = req.user; 
-	next();
-});
 app.use(passport.initialize());
 app.use(passport.session()); //tells passport to use previous sessions
 
@@ -54,11 +48,27 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use((req, res, next) => {
+	res.locals.flashMessages = req.flash();
+	res.locals.loggedIn = req.isAuthenticated(); //method added by passport module
+	res.locals.currentUser = req.user;
+	next();
+});
+
 //  routes //
 app.get('/', homeController.index);
+app.get('/users', userController.adminCheck, userController.index, userController.indexView);
 app.get('/users/new', userController.new);
+//app.get('/users/edit') how to differentiate admin and users edit pages? ///////////////////////////////////
+//app.put()
 app.post('/users/create', userController.create, userController.redirectView);
+app.get('/users/:id/delete', userController.delete, userController.redirectView);
 app.get('/users/login', userController.authenticate);
+app.get('/users/show', userController.show);
+app.get('/users/logout', userController.logout, userController.redirectView);
+
+
+
 app.listen(app.get('port'), () => {
 	console.log(`Server is running on port ${app.get('port')}`);
 });

@@ -28,7 +28,6 @@ const userSchema = new Schema({
 		type: String,
 		trim: true,
 		required: true,
-		uniqe: true
 	}
 
 },{timestamps:true});

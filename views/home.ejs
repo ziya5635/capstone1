@@ -9,11 +9,12 @@
 
 			<div class="column-sidebar">
 				<div class="tile">
+					<%if (!(loggedIn)){%>
 					<form class="login-form" action="/users/login" method="GET">
 						<h3>Login</h3>
 						<p>
 							<label for="username">Username</label>
-							<input type="text" name="username" id="username">
+							<input type="text" name="userName" id="username">
 						</p>
 						<p>
 							<label for="password">Password</label>
@@ -21,9 +22,14 @@
 						</p>
 						<button type="submit">Login</button>
 					</form>
+					<%}else{%>
+						<p><%=currentUser.fullName%> has logged in.</p>
+						<a href="/users/logout" class="cta-button logout">Logout</a>
+					<%}%>
 				</div>
 
 				<div class="tile centered">
+					<%if (!(loggedIn)) {%>
 					<small>Starting at</small>
 					<div class="cost">
 						<span class="cost-currency">$</span>
@@ -33,6 +39,9 @@
 					<a class="cta-button" href="/users/new">
 						Sign up
 					</a>
+					<%}else{%>
+						<p><%=`${currentUser.fullName}'s score is:`%></p>
+					<%}%>
 				</div>
 			</div>
 

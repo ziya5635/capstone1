@@ -151,4 +151,16 @@ body * + * {
 	flex-basis: 20em;
 }
 
+.logout {
+	text-align: center;
+}
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table {
+	width: 100%;
+}

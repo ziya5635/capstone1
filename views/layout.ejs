@@ -5,8 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
-
-
+	<%if(flashMessages){%>
+		<div class="flash">
+			<%for (const item in flashMessages) {%>
+				<p><%=flashMessages[item]%></p>
+			<%}%>
+		</div>
+	<%}%>
 	<div class="container">
 		<header>
 			<h1>Capstone</h1>
@@ -16,9 +21,12 @@
 			<ul class="site-nav">
 				<li><a href="/">Home</a></li>
 				<li><a href="/features">Features</a></li>
-				<li><a href="/pricing">Pricing</a></li>
+				<li><a href="/Pricing">Pricing</a></li>
 				<li><a href="/support">Support</a></li>
-				<li class="nav-right"><a href="/about">About</a></li>
+				<%if(loggedIn){%>
+					<li class="nav-right"><a href="/users/show">My Profile</a></li>
+				<%}%>
+				
 			</ul>
 		</nav>
 

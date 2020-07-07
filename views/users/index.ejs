@@ -1,0 +1,24 @@
+
+
+<table>
+	<tr>
+		<th>FirstName</th>
+		<th>LastName</th>
+		<th>Email</th>
+		<th>UserName</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<%users.forEach(user => {%>
+		<tr>
+			<td><%=user.name.first%></td>
+			<td><%=user.name.last%></td>
+			<td><%=user.email%></td>
+			<td><%=user.userName%></td>
+			<td><a href='/users/<%=user._id%>/edit'>edit</a></td>
+			<td><a href="/users/<%=user._id%>/delete">delete</a></td>
+		</tr>
+	<% })%>
+
+
+</table>
